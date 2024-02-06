@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700;800;900&family=Protest+Riot&display=swap');
+
+.font{
+    font-family: 'Protest Riot', sans-serif;
+}
+.font-inconsolata{
+    font-family: 'Inconsolata', monospace;
+}
+.customized{
+    width: 100%;
+    opacity: 1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.animate span {
+	display: inline-block;
 }
+
+.two span {
+	opacity: 0;
+	transform: translate(200px, -100px) scale(2);
+	animation: ballDrop .3s forwards;
+}
+
+@keyframes ballDrop {
+	60% {
+		transform: translate(0, 20px) rotate(-180deg) scale(.5);
+	}
+
+	100% {
+		transform: translate(0) rotate(0deg) scale(1);
+		opacity: 1;
+	}
+}
+
