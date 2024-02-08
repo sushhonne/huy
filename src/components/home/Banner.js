@@ -1,9 +1,16 @@
-import React, { useEffect } from "react";
-import Lenis from "@studio-freight/lenis"
+import React, { useEffect, useState } from "react";
+import Lenis from "@studio-freight/lenis";
+import Nav from "./Nav";
+
+
+
 function Banner() {
+  const [isActive, setIsActive] = useState(false);
+
+
   useEffect(() => {
     const handleScroll = () => {
-      const opacity = 1 - window.scrollY / 250;
+      const opacity = 1 - window.scrollY / 400;
       document.querySelector(".customized").style.opacity =
         opacity > 0 ? opacity : 0;
     };
@@ -15,23 +22,36 @@ function Banner() {
     };
   }, []);
 
-useEffect(()=>{
-  const lenis = new Lenis()
+  useEffect(() => {
+    const lenis = new Lenis({ duration: 2.2 });
 
-  lenis.on('scroll', (e) => {
-    console.log(e)
-  })
-  
-  function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-  
-  requestAnimationFrame(raf)
-},[])
+    lenis.on("scroll", (e) => {
+      console.log(e);
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
 
   return (
     <section className="bg-[#d1d1c7]">
+      {/* burger menu */}
+      <div
+        onClick={() => {
+          setIsActive(!isActive);
+        }}
+        className="button z-50"
+      >
+        <div className={`burger ${isActive ? "burgerActive" : ""}`}></div>
+      </div>
+      {/* navbar */}
+{isActive && <Nav/>}
+
       <div
         // style={{ backgroundImage: `url("backgroundImage.jpg")` }}
         className="parallax min-h-[200px] bg-fixed bg-center bg-no-repeat bg-cover bg-[#d1d1c7] relative flex items-center justify-between px-20"

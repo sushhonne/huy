@@ -24,26 +24,34 @@ export default function About() {
         </div>
         {/* part-2 */}
         <div className="">
-        <Accordion className="border-b-2 " title="Web Development">
-                    <p className="text-neutral-600 mt-3  group-open:animate-fadeIn sm:text-sm md:text-lg transition-transform delay-150 ">
-                      The potential side effects of a medication can vary depending on the drug. It's important to read the drug label and ask your healthcare provider or pharmacist about any possible side effects.
-                    </p>
-                  </Accordion>
-                  <Accordion className="border-b-2 " title="Web Design">
-                    <p className="text-neutral-600 mt-3  group-open:animate-fadeIn sm:text-sm md:text-lg transition-transform delay-150 ">
-                      The potential side effects of a medication can vary depending on the drug. It's important to read the drug label and ask your healthcare provider or pharmacist about any possible side effects.
-                    </p>
-                  </Accordion>
-                  <Accordion className="border-b-2 " title="SEO">
-                    <p className="text-neutral-600 mt-3  group-open:animate-fadeIn sm:text-sm md:text-lg transition-transform delay-150 ">
-                      The potential side effects of a medication can vary depending on the drug. It's important to read the drug label and ask your healthcare provider or pharmacist about any possible side effects.
-                    </p>
-                  </Accordion>
-                  <Accordion className="border-b-2 " title="Branding">
-                    <p className="text-neutral-600 mt-3  group-open:animate-fadeIn sm:text-sm md:text-lg transition-transform delay-150 ">
-                      The potential side effects of a medication can vary depending on the drug. It's important to read the drug label and ask your healthcare provider or pharmacist about any possible side effects.
-                    </p>
-                  </Accordion>
+          <Accordion className="border-b-2 " title="Web Development">
+            <p className="text-neutral-600 mt-3  group-open:animate-fadeIn sm:text-sm md:text-lg transition-transform delay-150 ">
+              The potential side effects of a medication can vary depending on
+              the drug. It's important to read the drug label and ask your
+              healthcare provider or pharmacist about any possible side effects.
+            </p>
+          </Accordion>
+          <Accordion className="border-b-2 " title="Web Design">
+            <p className="text-neutral-600 mt-3  group-open:animate-fadeIn sm:text-sm md:text-lg transition-transform delay-150 ">
+              The potential side effects of a medication can vary depending on
+              the drug. It's important to read the drug label and ask your
+              healthcare provider or pharmacist about any possible side effects.
+            </p>
+          </Accordion>
+          <Accordion className="border-b-2 " title="SEO">
+            <p className="text-neutral-600 mt-3  group-open:animate-fadeIn sm:text-sm md:text-lg transition-transform delay-150 ">
+              The potential side effects of a medication can vary depending on
+              the drug. It's important to read the drug label and ask your
+              healthcare provider or pharmacist about any possible side effects.
+            </p>
+          </Accordion>
+          <Accordion className="border-b-2 " title="Branding">
+            <p className="text-neutral-600 mt-3  group-open:animate-fadeIn sm:text-sm md:text-lg transition-transform delay-150 ">
+              The potential side effects of a medication can vary depending on
+              the drug. It's important to read the drug label and ask your
+              healthcare provider or pharmacist about any possible side effects.
+            </p>
+          </Accordion>
         </div>
       </div>
     </div>
