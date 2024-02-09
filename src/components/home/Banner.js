@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
-import Nav from "./Nav";
+import NavBar from "./NavBar";
+import { useWindowScroll } from "react-use";
 
 
 
 function Banner() {
+  const { y: scrollY } = useWindowScroll();
   const [isActive, setIsActive] = useState(false);
-
 
   useEffect(() => {
     const handleScroll = () => {
-      const opacity = 1 - window.scrollY / 400;
+      const opacity = 1 - scrollY / 400;
       document.querySelector(".customized").style.opacity =
         opacity > 0 ? opacity : 0;
     };
@@ -20,10 +21,10 @@ function Banner() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scrollY]);
 
   useEffect(() => {
-    const lenis = new Lenis({ duration: 2.2 });
+    const lenis = new Lenis({ duration: 1.8 });
 
     lenis.on("scroll", (e) => {
       console.log(e);
@@ -37,27 +38,29 @@ function Banner() {
     requestAnimationFrame(raf);
   }, []);
 
-
   return (
     <section className="bg-[#d1d1c7]">
       {/* burger menu */}
-      <div
+    <div className={` ${scrollY > 200 ? "block " : "hidden"}`}>
+    <div
         onClick={() => {
           setIsActive(!isActive);
         }}
-        className="button z-50"
+        style={{ zIndex: 20000 }}
+        className={`button `}
       >
-        <div className={`burger ${isActive ? "burgerActive" : ""}`}></div>
+        <div
+     style={{ zIndex: 50000 }}
+          className={`burger ${isActive ? "burgerActive  " : ""}`}
+        >
+          {isActive && <NavBar />}
+        </div>
       </div>
-      {/* navbar */}
-{isActive && <Nav/>}
+    </div>
 
-      <div
-        // style={{ backgroundImage: `url("backgroundImage.jpg")` }}
-        className="parallax min-h-[200px] bg-fixed bg-center bg-no-repeat bg-cover bg-[#d1d1c7] relative flex items-center justify-between px-20"
-      >
+      <div className="parallax min-h-[200px] bg-fixed bg-center bg-no-repeat bg-cover bg-[#d1d1c7] relative flex items-center justify-between px-20">
         {/* part-1 */}
-        <div className=" h-full w-full ">
+        <div className="h-full w-full">
           <img src="logo.svg" width="100px" height="100px" alt="" />
         </div>
         {/* part-2 */}
@@ -76,12 +79,12 @@ function Banner() {
       </div>
 
       <div
-        className={`customized h-[500px] bg-[#d1d1c7] z-50  text-center w-full flex flex-col items-center justify-top space-y-10`}
+        className={`customized h-[500px] bg-[#d1d1c7] z-50 text-center w-full flex flex-col items-center justify-top space-y-10`}
       >
         <p className="text-9xl font-grotesk font-extrabold text-[#393632]">
           HI THERE, <br /> I'M HUY NGUYEN.
         </p>
-        <p className="text-3xl  max-w-[60%]">
+        <p className="text-3xl max-w-[60%]">
           A freelance frontend developer & web designer propelling startup
           visions to reality.
         </p>
