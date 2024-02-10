@@ -80,37 +80,36 @@ body {
 
 .burger {
   width: 100%;
-  &::after,
-  &::before {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 40%;
-    margin: auto;
-    background-color: black;
-    position: relative;
-    transition: 0.3s;
-  }
-
-  &::after {
-    top: -5px;
-  }
-
-  &::before {
-    top: 5px;
-  }
 }
 
-.burgerActive {
-  &::after {
-    transform: rotate(45deg);
-    top: -1px;
-  }
+.burger::after,
+.burger::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 40%;
+  margin: auto;
+  background-color: black;
+  position: relative;
+  transition: 0.3s;
+}
 
-  &::before {
-    transform: rotate(-45deg);
-    top: 1px;
-  }
+.burger::after {
+  top: -5px;
+}
+
+.burger::before {
+  top: 5px;
+}
+
+.burgerActive::after {
+  transform: rotate(45deg);
+  top: -1px;
+}
+
+.burgerActive::before {
+  transform: rotate(-45deg);
+  top: 1px;
 }
 
 /* navbar inside burger menu */
